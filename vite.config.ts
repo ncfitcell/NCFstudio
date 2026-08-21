@@ -6,7 +6,8 @@ export default defineConfig({
   plugins: [
     build({
       entry: 'src/index.tsx',
-      outputDir: 'netlify/functions'
+      outputDir: 'netlify/functions',
+      output: 'index.mjs'
     }),
     devServer({
       entry: 'src/index.tsx'
