@@ -1,5 +1,5 @@
 -- NCF Venture Studio - PostgreSQL Schema for Supabase
--- Run this in Supabase SQL Editor: https://supabase.com/dashboard/project/zejpkbbavgrcvcwyvohu/sql
+-- Run this in your Supabase SQL Editor
 
 -- USERS
 CREATE TABLE IF NOT EXISTS users (

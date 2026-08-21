@@ -7,6 +7,6 @@
     "nodejs_compat"
   ],
   "vars": {
-    "SUPABASE_URL": "https://zejpkbbavgrcvcwyvohu.supabase.co"
+    "SUPABASE_URL": ""
   }
 }
