@@ -6,8 +6,12 @@ import type { Bindings, Variables } from '../lib/types'
 
 const DEV_SECRET = 'ncfvs-dev-secret-change-in-production-please'
 
-export function getJwtSecret(env: Bindings): string {
-  return env.JWT_SECRET || DEV_SECRET
+export function getJwtSecret(env?: Bindings): string {
+  return (
+    env?.JWT_SECRET ||
+    (typeof process !== 'undefined' ? process.env?.JWT_SECRET : '') ||
+    DEV_SECRET
+  )
 }
 
 export async function authMiddleware(c: Context<{ Bindings: Bindings; Variables: Variables }>, next: Next) {

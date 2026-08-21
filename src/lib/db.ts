@@ -66,24 +66,40 @@ async function execSql(
   return []
 }
 
-export function getDb(env: Bindings): DbAdapter {
-  const { SUPABASE_URL, SUPABASE_SERVICE_KEY } = env
+export function getDb(env?: Bindings): DbAdapter {
+  const SUPABASE_URL =
+    env?.SUPABASE_URL ||
+    (typeof process !== 'undefined' ? process.env?.SUPABASE_URL : '') ||
+    ''
+  const SUPABASE_SERVICE_KEY =
+    env?.SUPABASE_SERVICE_KEY ||
+    (typeof process !== 'undefined' ? process.env?.SUPABASE_SERVICE_KEY : '') ||
+    ''
 
   function makeStatement(sql: string, params: any[] = []): BoundStatement {
     return {
       bind: (...args: any[]) => makeStatement(sql, args),
 
       async first() {
+        if (!SUPABASE_URL || !SUPABASE_SERVICE_KEY) {
+          throw new Error('Database configuration error: SUPABASE_URL or SUPABASE_SERVICE_KEY is missing.')
+        }
         const rows = await execSql(SUPABASE_URL, SUPABASE_SERVICE_KEY, sql, params)
         return rows[0] ?? null
       },
 
       async all() {
+        if (!SUPABASE_URL || !SUPABASE_SERVICE_KEY) {
+          throw new Error('Database configuration error: SUPABASE_URL or SUPABASE_SERVICE_KEY is missing.')
+        }
         const rows = await execSql(SUPABASE_URL, SUPABASE_SERVICE_KEY, sql, params)
         return { results: rows }
       },
 
       async run() {
+        if (!SUPABASE_URL || !SUPABASE_SERVICE_KEY) {
+          throw new Error('Database configuration error: SUPABASE_URL or SUPABASE_SERVICE_KEY is missing.')
+        }
         const rows = await execSql(SUPABASE_URL, SUPABASE_SERVICE_KEY, sql, params)
         const lastId = rows.length > 0 && rows[0]?.id != null ? Number(rows[0].id) : 0
         return { meta: { last_row_id: lastId } }
