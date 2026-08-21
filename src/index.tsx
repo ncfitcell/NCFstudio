@@ -1,5 +1,4 @@
 import { Hono } from 'hono'
-import { serveStatic } from 'hono/cloudflare-workers'
 import { renderer } from './renderer'
 import type { Bindings, Variables } from './lib/types'
 
@@ -18,7 +17,7 @@ import directoryRoutes from './routes/directory'
 
 const app = new Hono<{ Bindings: Bindings; Variables: Variables }>()
 
-app.use('/static/*', serveStatic({ root: './public' }))
+// Static files are served directly by Netlify CDN from the publish directory
 
 app.route('/api/auth', authRoutes)
 app.route('/api/admin', adminRoutes)
