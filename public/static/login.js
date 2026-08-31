@@ -1,19 +1,19 @@
 function renderLogin() {
   const root = document.getElementById('root')
   root.innerHTML = `
-    <div class="min-h-screen flex items-center justify-center relative overflow-hidden" style="background: radial-gradient(circle at 20% 20%, rgba(0,180,216,0.10), transparent 40%), radial-gradient(circle at 80% 80%, rgba(142,45,226,0.10), transparent 40%), #0A192F;">
-      <div class="absolute inset-0 pointer-events-none opacity-30" style="background-image: linear-gradient(rgba(0,180,216,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(0,180,216,0.06) 1px, transparent 1px); background-size: 40px 40px;"></div>
+    <div class="min-h-screen flex items-center justify-center relative overflow-hidden" style="background: radial-gradient(circle at 20% 15%, rgba(74,0,224,0.22), transparent 45%), radial-gradient(circle at 80% 85%, rgba(142,45,226,0.18), transparent 50%), radial-gradient(circle at 50% 50%, rgba(0,180,216,0.08), transparent 60%), #0B0D21;">
+      <div class="absolute inset-0 pointer-events-none opacity-30" style="background-image: linear-gradient(rgba(142,45,226,0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(74,0,224,0.08) 1px, transparent 1px); background-size: 40px 40px;"></div>
 
       <div class="relative z-10 w-full max-w-md mx-4">
         <div class="text-center mb-8">
-          <div class="inline-flex items-center justify-center w-16 h-16 rounded-2xl gradient-purple shadow-glow mb-4">
+          <div class="inline-flex items-center justify-center w-16 h-16 rounded-2xl gradient-purple shadow-purple-glow mb-4">
             <i class="fa-solid fa-rocket text-2xl text-white"></i>
           </div>
           <h1 class="text-2xl font-extrabold text-white tracking-tight">NCF Venture Studio</h1>
           <p class="text-slate-400 text-sm mt-1">Operational Hub &amp; Deal-Flow Pipeline</p>
         </div>
 
-        <div class="bg-navy-slate border border-white/5 rounded-2xl shadow-glow p-8">
+        <div class="bg-navy-slate/90 backdrop-blur-md border border-purple-500/20 rounded-2xl shadow-purple-glow p-8">
           <h2 class="text-lg font-semibold text-white mb-1">Welcome back</h2>
           <p class="text-slate-400 text-sm mb-6">Sign in to access your studio dashboard</p>
 

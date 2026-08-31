@@ -73,14 +73,14 @@ function renderShell() {
   const u = AppState.user
 
   root.innerHTML = `
-    <div class="h-screen flex overflow-hidden bg-navy">
+    <div class="h-screen flex overflow-hidden bg-navy app-bg">
       <!-- Mobile overlay -->
       <div id="mobile-overlay" class="fixed inset-0 bg-black/60 z-30 md:hidden ${AppState.sidebarOpen ? '' : 'hidden'}"></div>
 
       <!-- Sidebar -->
       <aside id="sidebar" class="fixed md:static z-40 md:z-auto h-full w-72 bg-navy-deep border-r border-white/5 flex flex-col transition-transform duration-200 ${AppState.sidebarOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0'}">
         <div class="h-16 flex items-center gap-2.5 px-4 border-b border-white/5 shrink-0">
-          <div class="w-9 h-9 rounded-lg gradient-purple flex items-center justify-center shrink-0">
+          <div class="w-9 h-9 rounded-lg gradient-purple shadow-purple-glow flex items-center justify-center shrink-0">
             <i class="fa-solid fa-rocket text-white text-sm"></i>
           </div>
           <div class="min-w-0">
@@ -114,7 +114,7 @@ function renderShell() {
       </aside>
 
       <!-- Main -->
-      <div class="flex-1 flex flex-col min-w-0">
+      <div class="flex-1 flex flex-col min-w-0 app-bg">
         <!-- Header -->
         <header class="h-16 bg-navy-slate border-b border-white/5 flex items-center gap-3 px-4 md:px-6 shrink-0">
           <button id="sidebar-open-btn" class="md:hidden text-slate-300 hover:text-white p-1">

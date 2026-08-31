@@ -1,11 +1,18 @@
-* { scrollbar-width: thin; scrollbar-color: #1e3a5f #0A192F; }
+* { scrollbar-width: thin; scrollbar-color: #271E56 #0B0D21; }
 *::-webkit-scrollbar { width: 8px; height: 8px; }
-*::-webkit-scrollbar-track { background: #0A192F; }
-*::-webkit-scrollbar-thumb { background: #1e3a5f; border-radius: 4px; }
-*::-webkit-scrollbar-thumb:hover { background: #00B4D8; }
+*::-webkit-scrollbar-track { background: #0B0D21; }
+*::-webkit-scrollbar-thumb { background: #271E56; border-radius: 4px; }
+*::-webkit-scrollbar-thumb:hover { background: #8E2DE2; }
 
-html, body { height: 100%; margin: 0; }
+html, body { height: 100%; margin: 0; background-color: #0B0D21; }
 #root { height: 100vh; }
+
+.app-bg {
+  background: radial-gradient(circle at 10% 0%, rgba(74,0,224,0.12), transparent 35%),
+              radial-gradient(circle at 90% 100%, rgba(142,45,226,0.10), transparent 40%),
+              radial-gradient(circle at 50% 50%, rgba(0,180,216,0.04), transparent 60%),
+              #0B0D21;
+}
 
 .fade-in { animation: fadeIn 0.25s ease-out; }
 @keyframes fadeIn { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }

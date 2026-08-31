@@ -37,13 +37,14 @@ d.remove()
                 extend: {
                   fontFamily: { sans: ['Inter', 'ui-sans-serif', 'system-ui'] },
                   colors: {
-                    navy: { DEFAULT: '#0A192F', deep: '#060F1F', slate: '#0D213F', light: '#132A4A' },
+                    navy: { DEFAULT: '#0B0D21', deep: '#060714', slate: '#10132E', light: '#181C44' },
                     teal: { DEFAULT: '#00B4D8', dark: '#0090AD', light: '#48CAE4' },
                     amber: { DEFAULT: '#FFB703' },
-                    purple: { from: '#4A00E0', to: '#8E2DE2' }
+                    purple: { DEFAULT: '#6C14E1', from: '#4A00E0', to: '#8E2DE2', dark: '#3A00B0', light: '#A855F7' }
                   },
                   boxShadow: {
-                    glow: '0 0 0 1px rgba(0,180,216,0.15), 0 4px 24px rgba(0,180,216,0.08)'
+                    glow: '0 0 0 1px rgba(0,180,216,0.15), 0 4px 24px rgba(0,180,216,0.08)',
+                    'purple-glow': '0 0 0 1px rgba(142,45,226,0.22), 0 4px 24px rgba(74,0,224,0.18)'
                   }
                 }
               }
